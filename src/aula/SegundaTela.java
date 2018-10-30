@@ -122,6 +122,7 @@ public class SegundaTela extends JFrame{
 		sexo.setBounds(335, 15, 55, 30);		
 		grupo.add(rdbsexo[0]); //grupo para o sexo
 		grupo.add(rdbsexo[1]);
+		
 		paine.add(rdbsexo[0]); //opção para o sexo
 		rdbsexo[0].setBounds(375, 15, 85, 30);
 		paine.add(rdbsexo[1]);
