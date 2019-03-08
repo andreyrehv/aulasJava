@@ -1,6 +1,8 @@
 package calculadora08_03_19;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,7 +22,7 @@ public class Calculator extends JFrame{
 		
 		
 		//Caixa de Resultado
-		JTextField Resultado = new JTextField();
+		JTextField resultado = new JTextField("0");
 		
 		
 		//Botões
@@ -53,6 +55,8 @@ public class Calculator extends JFrame{
 		JButton btnPonto = new JButton(".");
 		JButton btnMais = new JButton("+");
 		JButton btnIgual = new JButton("=");
+		
+	
 	
 	
 		public Calculator() {
@@ -75,8 +79,8 @@ public class Calculator extends JFrame{
 			
 			
 			//Caixa de Resultado
-			Resultado.setBounds(10, 28, 273, 62);
-			paine.add(Resultado);
+			resultado.setBounds(10, 28, 273, 62);
+			paine.add(resultado);
 			
 			
 			//Botões
@@ -113,9 +117,34 @@ public class Calculator extends JFrame{
 			
 			btnSete.setBounds(10, 180, 52, 30);
 			paine.add(btnSete);
+			btnSete.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("7");
+					}else {
+						resultado.setText(resultado.getText() + "7");
+					}
+					
+					
+				}
+			});
 			
 			btnOito.setBounds(65, 180, 52, 30);
 			paine.add(btnOito);
+			btnOito.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("8");
+					}else {
+						resultado.setText(resultado.getText() + "7");
+					}
+					
+					
+				}
+			});
+			
 			
 			btnNove.setBounds(120, 180, 52, 30);
 			paine.add(btnNove);
@@ -164,12 +193,22 @@ public class Calculator extends JFrame{
 			
 			btnMais.setBounds(175, 300, 52, 30);
 			paine.add(btnMais);
+			btnIgual.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					sinal = "soma";
+					
+				}
+			});
 			
 			
-			
-			
-			
-						
+			// Função dos botões
+			btnIgual.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+									
 			
 			
 			this.setLayout(null);// Definir um layout
@@ -178,6 +217,8 @@ public class Calculator extends JFrame{
 			this.setSize(310, 400); // Tamanho da tela
 			// this. serve para acessar metodos de outras classes.
 		}
+		
+		
 	
 	
 	public static void main(String[] args) {
