@@ -138,7 +138,7 @@ public class Calculator extends JFrame{
 					if(resultado.getText().equals("0")) {
 						resultado.setText("8");
 					}else {
-						resultado.setText(resultado.getText() + "7");
+						resultado.setText(resultado.getText() + "8");
 					}
 					
 					
@@ -148,6 +148,18 @@ public class Calculator extends JFrame{
 			
 			btnNove.setBounds(120, 180, 52, 30);
 			paine.add(btnNove);
+			btnNove.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("9");
+					}else {
+						resultado.setText(resultado.getText() + "9");
+					}
+					
+					
+				}
+			});
 			
 			btnDivisao.setBounds(175, 180, 52, 30);
 			paine.add(btnDivisao);
@@ -157,12 +169,48 @@ public class Calculator extends JFrame{
 			
 			btnQuatro.setBounds(10, 220, 52, 30);
 			paine.add(btnQuatro);
+			btnQuatro.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("4");
+					}else {
+						resultado.setText(resultado.getText() + "4");
+					}
+					
+					
+				}
+			});
 			
 			btnCinco.setBounds(65, 220, 52, 30);
 			paine.add(btnCinco);
+			btnCinco.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("5");
+					}else {
+						resultado.setText(resultado.getText() + "5");
+					}
+					
+					
+				}
+			});
 			
 			btnSeis.setBounds(120, 220, 52, 30);
 			paine.add(btnSeis);
+			btnSeis.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("6");
+					}else {
+						resultado.setText(resultado.getText() + "6");
+					}
+					
+					
+				}
+			});
 			
 			btnMultip.setBounds(175, 220, 52, 30);
 			paine.add(btnMultip);
@@ -172,12 +220,48 @@ public class Calculator extends JFrame{
 			
 			btnUm.setBounds(10, 260, 52, 30);
 			paine.add(btnUm);
+			btnUm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("1");
+					}else {
+						resultado.setText(resultado.getText() + "1");
+					}
+					
+					
+				}
+			});
 			
 			btnDois.setBounds(65, 260, 52, 30);
 			paine.add(btnDois);
-			 
+			btnDois.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("2");
+					}else {
+						resultado.setText(resultado.getText() + "2");
+					}
+					
+					
+				}
+			});
+			
 			btnTres.setBounds(120, 260, 52, 30);
 			paine.add(btnTres);
+			btnTres.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("3");
+					}else {
+						resultado.setText(resultado.getText() + "3");
+					}
+					
+					
+				}
+			});
 			
 			btnMenos.setBounds(175, 260, 52, 30);
 			paine.add(btnMenos);
@@ -187,6 +271,18 @@ public class Calculator extends JFrame{
 			
 			btnZero.setBounds(10, 300, 107, 30);
 			paine.add(btnZero);
+			btnZero.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals("0")) {
+						resultado.setText("0");
+					}else {
+						resultado.setText(resultado.getText() + "0");
+					}
+					
+					
+				}
+			});
 			
 			btnPonto.setBounds(120, 300, 52, 30);
 			paine.add(btnPonto);
