@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Calculator extends JFrame{
+
+// extends serve para acessar outras classes.
+public class Calculator extends JFrame{ 
 	
 	
 		
@@ -22,6 +24,7 @@ public class Calculator extends JFrame{
 		
 		
 		//Botões
+		//JButton cria os botões
 		JButton btnMC = new JButton("MC");
 		JButton btnMR = new JButton("MR");
 		JButton btnMS = new JButton("MS");
@@ -53,10 +56,11 @@ public class Calculator extends JFrame{
 	
 	
 		public Calculator() {
-			super("Calculadora");
+			super("Calculadora"); // Titulo da Janela
 			
 			
 			Container paine = this.getContentPane();
+			
 			
 			
 			//Menu
@@ -76,6 +80,7 @@ public class Calculator extends JFrame{
 			
 			
 			//Botões
+			//Define o tamanho da caixa e onde ela vai estar localizada
 			btnMC.setBounds(10, 100, 52, 30);
 			paine.add(btnMC);
 			
@@ -164,25 +169,14 @@ public class Calculator extends JFrame{
 			
 			
 			
+						
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			this.setLayout(null);
-			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-			this.setVisible(true);
-			this.setSize(310, 400);
-			
+			this.setLayout(null);// Definir um layout
+			this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite fechar a janela no "X"
+			this.setVisible(true); // Define a tela visivel 
+			this.setSize(310, 400); // Tamanho da tela
+			// this. serve para acessar metodos de outras classes.
 		}
 	
 	
