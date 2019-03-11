@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import funcoes.FuncoesMatematicas;
+
 
 // extends serve para acessar outras classes.
 public class Calculator extends JFrame{ 
@@ -56,7 +58,10 @@ public class Calculator extends JFrame{
 		JButton btnMais = new JButton("+");
 		JButton btnIgual = new JButton("=");
 		
-	
+
+		FuncoesMatematicas mat = new FuncoesMatematicas();
+		String sinal = null;
+		double valor1 = 0, valor2 = 0;
 	
 	
 		public Calculator() {
@@ -289,10 +294,11 @@ public class Calculator extends JFrame{
 			
 			btnMais.setBounds(175, 300, 52, 30);
 			paine.add(btnMais);
-			btnIgual.addActionListener(new ActionListener() {
+			btnMais.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "soma";
-					
+					resultado.setText("0");
 				}
 			});
 			
@@ -300,8 +306,11 @@ public class Calculator extends JFrame{
 			// Função dos botões
 			btnIgual.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-					
+					valor2 = Double.parseDouble(resultado.getText());
+
+					if(sinal.equals("soma")) {
+						resultado.setText(mat.soma(valor1, valor2) + "");
+					}
 				}
 			});
 									
