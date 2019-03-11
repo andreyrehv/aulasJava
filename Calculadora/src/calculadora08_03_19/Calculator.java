@@ -168,6 +168,13 @@ public class Calculator extends JFrame{
 			
 			btnDivisao.setBounds(175, 180, 52, 30);
 			paine.add(btnDivisao);
+			btnMais.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "divisao";
+					resultado.setText("0");
+				}
+			});
 			
 			btnPercent.setBounds(230, 180, 52, 30);
 			paine.add(btnPercent);
@@ -219,6 +226,13 @@ public class Calculator extends JFrame{
 			
 			btnMultip.setBounds(175, 220, 52, 30);
 			paine.add(btnMultip);
+			btnMais.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "multiplicar";
+					resultado.setText("0");
+				}
+			});
 			
 			btnUmX.setBounds(230, 220, 52, 30);
 			paine.add(btnUmX);
@@ -270,10 +284,15 @@ public class Calculator extends JFrame{
 			
 			btnMenos.setBounds(175, 260, 52, 30);
 			paine.add(btnMenos);
+			btnMais.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "subtrair";
+					resultado.setText("0");
+				}
+			});
 			
-			btnIgual.setBounds(230, 260, 52, 70);
-			paine.add(btnIgual);
-			
+						
 			btnZero.setBounds(10, 300, 107, 30);
 			paine.add(btnZero);
 			btnZero.addActionListener(new ActionListener() {
@@ -303,8 +322,10 @@ public class Calculator extends JFrame{
 			});
 			
 			
-			// Função dos botões
-			btnIgual.addActionListener(new ActionListener() {
+			
+			btnIgual.setBounds(230, 260, 52, 70);
+			paine.add(btnIgual);
+			btnIgual.addActionListener(new ActionListener() { // Função dos botões
 				public void actionPerformed(ActionEvent e) {
 					valor2 = Double.parseDouble(resultado.getText());
 
