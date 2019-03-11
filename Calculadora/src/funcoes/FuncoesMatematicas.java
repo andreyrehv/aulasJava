@@ -31,4 +31,10 @@ public class FuncoesMatematicas {
 		resultado = Math.sqrt (a);
 		return resultado;
 	}
+	
+	public double percent(double a, double b) {
+		double resultado;
+		resultado = a /(b*100);
+		return resultado;
+	}
 }
