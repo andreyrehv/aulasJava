@@ -18,9 +18,9 @@ public class Calculator extends JFrame{
 	
 		
 		//Menu
-		JLabel Exibir = new JLabel("EXIBIR");
-		JLabel Editar = new JLabel("EDITAR");
-		JLabel Help = new JLabel("HELP");
+		JLabel Exibir = new JLabel("Exibir");
+		JLabel Editar = new JLabel("Editar");
+		JLabel Help = new JLabel("Ajuda!");
 		
 		
 		//Caixa de Resultado
@@ -113,12 +113,30 @@ public class Calculator extends JFrame{
 			
 			btnC.setBounds(120, 140, 52, 30);
 			paine.add(btnC);
+			btnC.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					valor1=0d;
+					valor2=0d;
+					sinal=null;
+					resultado.setText("0");
+					
+					
+				}
+			});
 			
 			btnMaisMenos.setBounds(175, 140, 52, 30);
 			paine.add(btnMaisMenos);
 			
 			btnRaizQ.setBounds(230, 140, 52, 30);
 			paine.add(btnRaizQ);
+			btnRaizQ.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "raiz";
+					resultado.setText("0");
+				}
+			});
 			
 			btnSete.setBounds(10, 180, 52, 30);
 			paine.add(btnSete);
@@ -335,8 +353,10 @@ public class Calculator extends JFrame{
 						resultado.setText(mat.subtrair(valor1, valor2) + "");
 					}else if(sinal.equals("multiplicar")){
 						resultado.setText(mat.multiplicar(valor1, valor2) + "");
-					}else {
+					}else if(sinal.equals("divisao")) {
 						resultado.setText(mat.divisao(valor1, valor2) + "");
+					}else {
+						resultado.setText(mat.raiz(valor1) + "");
 					}
 					
 				

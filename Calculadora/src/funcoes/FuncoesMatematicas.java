@@ -25,4 +25,10 @@ public class FuncoesMatematicas {
 		resultado = a / b;
 		return resultado;	
 	}
+	
+	public double raiz (double a) {
+		double resultado = 0;
+		resultado = Math.sqrt (a);
+		return resultado;
+	}
 }
