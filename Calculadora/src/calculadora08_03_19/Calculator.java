@@ -168,7 +168,7 @@ public class Calculator extends JFrame{
 			
 			btnDivisao.setBounds(175, 180, 52, 30);
 			paine.add(btnDivisao);
-			btnMais.addActionListener(new ActionListener() {
+			btnDivisao.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "divisao";
@@ -226,7 +226,7 @@ public class Calculator extends JFrame{
 			
 			btnMultip.setBounds(175, 220, 52, 30);
 			paine.add(btnMultip);
-			btnMais.addActionListener(new ActionListener() {
+			btnMultip.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "multiplicar";
@@ -284,7 +284,7 @@ public class Calculator extends JFrame{
 			
 			btnMenos.setBounds(175, 260, 52, 30);
 			paine.add(btnMenos);
-			btnMais.addActionListener(new ActionListener() {
+			btnMenos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "subtrair";
@@ -318,6 +318,7 @@ public class Calculator extends JFrame{
 					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "soma";
 					resultado.setText("0");
+					System.out.println(valor1);
 				}
 			});
 			
@@ -328,13 +329,19 @@ public class Calculator extends JFrame{
 			btnIgual.addActionListener(new ActionListener() { // Função dos botões
 				public void actionPerformed(ActionEvent e) {
 					valor2 = Double.parseDouble(resultado.getText());
-
-					if(sinal.equals("soma")) {
+					if(sinal.equals("soma")){
 						resultado.setText(mat.soma(valor1, valor2) + "");
+					}else if(sinal.equals("subtrair")){
+						resultado.setText(mat.subtrair(valor1, valor2) + "");
+					}else if(sinal.equals("multiplicar")){
+						resultado.setText(mat.multiplicar(valor1, valor2) + "");
+					}else {
+						resultado.setText(mat.divisao(valor1, valor2) + "");
 					}
+					
+				
 				}
-			});
-									
+				});
 			
 			
 			this.setLayout(null);// Definir um layout
