@@ -54,7 +54,7 @@ public class Calculator extends JFrame{
 		JButton btnTres = new JButton("3");
 		JButton btnMenos = new JButton("-");
 		JButton btnZero = new JButton("0");
-		JButton btnPonto = new JButton(".");
+		JButton btnVirgula = new JButton(",");
 		JButton btnMais = new JButton("+");
 		JButton btnIgual = new JButton("=");
 		
@@ -107,9 +107,26 @@ public class Calculator extends JFrame{
 			
 			btnBack.setBounds(10, 140, 52, 30);
 			paine.add(btnBack);
+			btnBack.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					resultado.setText(resultado.getText().substring(0, resultado.getText().length() - 1));
+				}
+			});
 			
 			btnCE.setBounds(65, 140, 52, 30);
 			paine.add(btnCE);
+			btnCE.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					valor2=0d;
+					
+					resultado.setText("0");
+					
+					
+				}
+			});
+			
 			
 			btnC.setBounds(120, 140, 52, 30);
 			paine.add(btnC);
@@ -196,6 +213,13 @@ public class Calculator extends JFrame{
 			
 			btnPercent.setBounds(230, 180, 52, 30);
 			paine.add(btnPercent);
+			btnPercent.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "percent";
+					resultado.setText("0");
+				}
+			});
 			
 			btnQuatro.setBounds(10, 220, 52, 30);
 			paine.add(btnQuatro);
@@ -254,6 +278,13 @@ public class Calculator extends JFrame{
 			
 			btnUmX.setBounds(230, 220, 52, 30);
 			paine.add(btnUmX);
+			btnUmX.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "umx";
+					resultado.setText("0");
+				}
+			});
 			
 			btnUm.setBounds(10, 260, 52, 30);
 			paine.add(btnUm);
@@ -326,8 +357,8 @@ public class Calculator extends JFrame{
 				}
 			});
 			
-			btnPonto.setBounds(120, 300, 52, 30);
-			paine.add(btnPonto);
+			btnVirgula.setBounds(120, 300, 52, 30);
+			paine.add(btnVirgula);
 			
 			btnMais.setBounds(175, 300, 52, 30);
 			paine.add(btnMais);
@@ -355,6 +386,10 @@ public class Calculator extends JFrame{
 						resultado.setText(mat.multiplicar(valor1, valor2) + "");
 					}else if(sinal.equals("divisao")) {
 						resultado.setText(mat.divisao(valor1, valor2) + "");
+					}else if(sinal.equals("percent")) {
+						resultado.setText(mat.percent(valor1, valor2) + "");
+					}else if(sinal.equals("umx")) {
+						resultado.setText(mat.umx(valor1) + "");
 					}else {
 						resultado.setText(mat.raiz(valor1) + "");
 					}

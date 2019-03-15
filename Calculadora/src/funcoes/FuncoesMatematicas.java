@@ -34,7 +34,14 @@ public class FuncoesMatematicas {
 	
 	public double percent(double a, double b) {
 		double resultado;
-		resultado = a /(b*100);
+		resultado = (a *b)/100;
 		return resultado;
 	}
+	
+	public double umx(double a) {
+		double resultado;
+		resultado = 1 / a;
+		return resultado;	
+	}
+	
 }
