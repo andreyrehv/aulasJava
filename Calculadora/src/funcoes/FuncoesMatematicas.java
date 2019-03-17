@@ -44,4 +44,10 @@ public class FuncoesMatematicas {
 		return resultado;	
 	}
 	
+	public double maismenos(double a) {
+		double resultado;
+		resultado = a*(-1);
+		return resultado;
+	}
+	
 }

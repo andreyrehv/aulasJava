@@ -61,7 +61,8 @@ public class Calculator extends JFrame{
 
 		FuncoesMatematicas mat = new FuncoesMatematicas();
 		String sinal = null;
-		double valor1 = 0, valor2 = 0;
+		double valor1 = 0, valor2 = 0, memory;
+		
 	
 	
 		public Calculator() {
@@ -100,12 +101,10 @@ public class Calculator extends JFrame{
 			paine.add(btnMS);
 			btnMS.addActionListener(new ActionListener() {
 				@Override
-				public void actionPerformed(ActionEvent e) {					
-					  JTextField memory = Double.parseDouble(valor1.getText());
-					  memory=resultado;
-			          sinal=String.valueOf(resultado);
-			          valor2.setText(sinal);				
-					
+				public void actionPerformed(ActionEvent e) {
+					//memory = Double.parseDouble(valor1.getText());
+					//sinal = String.valueOf(resultado);
+					//valor1.setText();					
 				}
 			});
 			
@@ -151,6 +150,13 @@ public class Calculator extends JFrame{
 			
 			btnMaisMenos.setBounds(175, 140, 52, 30);
 			paine.add(btnMaisMenos);
+			btnMaisMenos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					valor1 = Double.parseDouble(resultado.getText());
+					sinal = "maismenos";
+					resultado.setText("0");
+				}
+			});
 			
 			btnRaizQ.setBounds(230, 140, 52, 30);
 			paine.add(btnRaizQ);
@@ -366,6 +372,18 @@ public class Calculator extends JFrame{
 			
 			btnVirgula.setBounds(120, 300, 52, 30);
 			paine.add(btnVirgula);
+			btnVirgula.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					if(resultado.getText().equals(".")) {
+						resultado.setText(".");
+					}else {
+						resultado.setText(resultado.getText() + ".");
+					}
+					
+					
+				}
+			});
 			
 			btnMais.setBounds(175, 300, 52, 30);
 			paine.add(btnMais);
@@ -374,7 +392,6 @@ public class Calculator extends JFrame{
 					valor1 = Double.parseDouble(resultado.getText());
 					sinal = "soma";
 					resultado.setText("0");
-					System.out.println(valor1);
 				}
 			});
 			
@@ -397,6 +414,8 @@ public class Calculator extends JFrame{
 						resultado.setText(mat.percent(valor1, valor2) + "");
 					}else if(sinal.equals("umx")) {
 						resultado.setText(mat.umx(valor1) + "");
+					}else if(sinal.equals("maismenos")) {
+						resultado.setText(mat.maismenos(valor1) + "");
 					}else {
 						resultado.setText(mat.raiz(valor1) + "");
 					}
