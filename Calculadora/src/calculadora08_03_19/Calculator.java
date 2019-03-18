@@ -98,6 +98,16 @@ public class Calculator extends JFrame{
 			
 			btnMS.setBounds(120, 100, 52, 30);
 			paine.add(btnMS);
+			btnMS.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {					
+					  JTextField memory = Double.parseDouble(valor1.getText());
+					  memory=resultado;
+			          sinal=String.valueOf(resultado);
+			          valor2.setText(sinal);				
+					
+				}
+			});
 			
 			btnMmais.setBounds(175, 100, 52, 30);
 			paine.add(btnMmais);
@@ -117,12 +127,9 @@ public class Calculator extends JFrame{
 			paine.add(btnCE);
 			btnCE.addActionListener(new ActionListener() {
 				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					valor2=0d;
-					
-					resultado.setText("0");
-					
+				public void actionPerformed(ActionEvent e) {					
+					valor2=0d;					
+					resultado.setText("0");					
 					
 				}
 			});
