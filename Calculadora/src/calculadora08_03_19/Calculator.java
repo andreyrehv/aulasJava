@@ -93,26 +93,50 @@ public class Calculator extends JFrame{
 			//Define o tamanho da caixa e onde ela vai estar localizada
 			btnMC.setBounds(10, 100, 52, 30);
 			paine.add(btnMC);
+			btnMC.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {					
+					memory=0d;
+					resultado.setText("0");
+					
+				}
+			});
 			
 			btnMR.setBounds(65, 100, 52, 30);
 			paine.add(btnMR);
+			btnMR.addActionListener(new ActionListener() {				
+				public void actionPerformed(ActionEvent e) {
+					resultado.setText(Double.toString(memory));								
+				}
+			});
 			
 			btnMS.setBounds(120, 100, 52, 30);
 			paine.add(btnMS);
-			btnMS.addActionListener(new ActionListener() {
-				@Override
+			btnMS.addActionListener(new ActionListener() {				
 				public void actionPerformed(ActionEvent e) {
-					//memory = Double.parseDouble(valor1.getText());
-					//sinal = String.valueOf(resultado);
-					//valor1.setText();					
+					memory = Double.parseDouble(resultado.getText());
+													
 				}
 			});
 			
 			btnMmais.setBounds(175, 100, 52, 30);
-			paine.add(btnMmais);
+			paine.add(btnMmais);			
+			btnMmais.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					memory += Double.parseDouble(resultado.getText());					
+					
+				}
+			});
+			
 			
 			btnMmenos.setBounds(230, 100, 52, 30);
 			paine.add(btnMmenos);
+			btnMmenos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					memory -= Double.parseDouble(resultado.getText());					
+					
+				}
+			});
 			
 			btnBack.setBounds(10, 140, 52, 30);
 			paine.add(btnBack);
