@@ -451,7 +451,7 @@ public class Calculator extends JFrame{
 				}
 				});
 			
-			
+			this.setResizable(false); // faz com que a tela não possa ser alterada o tamanho com o mouse
 			this.setLayout(null);// Definir um layout
 			this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Permite fechar a janela no "X"
 			this.setVisible(true); // Define a tela visivel 
