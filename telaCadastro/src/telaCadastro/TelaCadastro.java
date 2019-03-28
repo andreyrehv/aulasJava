@@ -35,7 +35,7 @@ public class TelaCadastro extends JFrame  {
 		JTextField cpfC = new JTextField("");
 		
 		JButton save = new JButton("Salvar");
-		JButton imprimi = new JButton("Imprimir");
+		JButton imprimir = new JButton("Imprimir");
 		
 		
 	public TelaCadastro() {
@@ -45,12 +45,61 @@ public class TelaCadastro extends JFrame  {
 		
 		nome.setBounds(10, 10, 40, 25);
 		paine.add(nome);		
-		nomeC.setBounds(52, 10, 200, 25);
+		nomeC.setBounds(70, 10, 200, 25);
 		paine.add(nomeC);	
 		
 		
 		endereco.setBounds(10, 40, 200, 25);
 		paine.add(endereco);
+		enderecoC.setBounds(70, 40, 200, 25);
+		paine.add(enderecoC);
+		
+		cidade.setBounds(10, 70, 50, 25);
+		paine.add(cidade);
+		cidadeC.setBounds(70, 70, 200, 25);
+		paine.add(cidadeC);
+		
+		bairro.setBounds(10, 100, 50, 25);
+		paine.add(bairro);
+		bairroC.setBounds(70, 100, 200, 25);
+		paine.add(bairroC);
+		
+		tel.setBounds(10, 130, 100, 25);
+		paine.add(tel);
+		telC.setBounds(70, 130, 200, 25);
+		paine.add(telC);
+		
+		rg.setBounds(10, 160, 50, 25);
+		paine.add(rg);
+		rgC.setBounds(70, 160, 200, 25);
+		paine.add(rgC);
+		
+		sexo.setBounds(290, 10, 50, 25);
+		paine.add(sexo);
+		
+		cep.setBounds(290, 40, 50, 25);
+		paine.add(cep);
+		cepC.setBounds(340, 40, 150, 25);
+		paine.add(cepC);
+		
+		estado.setBounds(290, 70, 50, 25);
+		paine.add(estado);
+		
+		celular.setBounds(290, 130, 50, 25);
+		paine.add(celular);
+		celularC.setBounds(340, 130, 150, 25);
+		paine.add(celularC);
+		
+		cpf.setBounds(290, 160, 50, 25);
+		paine.add(cpf);
+		cpfC.setBounds(340, 160, 150, 25);
+		paine.add(cpfC);
+		
+		save.setBounds(299, 210, 90, 35);
+		paine.add(save);
+		
+		imprimir.setBounds(399, 210, 90, 35);
+		paine.add(imprimir);
 		
 		
 		
@@ -58,7 +107,7 @@ public class TelaCadastro extends JFrame  {
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(600, 400);
+		this.setSize(530, 310);
 	}
 	public static void main(String[] args) {
 		TelaCadastro cadastro = new TelaCadastro();
