@@ -62,6 +62,7 @@ public class Calculator extends JFrame{
 		FuncoesMatematicas mat = new FuncoesMatematicas();
 		String sinal = null;
 		double valor1 = 0, valor2 = 0, memory;
+		boolean isResult = false; // Para fazer aparecer o numero depois do calculo, em vez de juntar ao calculo.
 		
 	
 	
@@ -338,15 +339,16 @@ public class Calculator extends JFrame{
 				}
 			});
 			
+			//Por base do boolean
 			btnDois.setBounds(65, 260, 52, 30);
 			paine.add(btnDois);
 			btnDois.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					if(resultado.getText().equals("0")) {
-						resultado.setText("2");
+					if(isResult) {
+						resultado.setText(btnDois.getText());
 					}else {
-						resultado.setText(resultado.getText() + "2");
+						resultado.setText(resultado.getText() + btnDois.getText());
 					}
 					
 					
@@ -425,6 +427,7 @@ public class Calculator extends JFrame{
 			paine.add(btnIgual);
 			btnIgual.addActionListener(new ActionListener() { // Função dos botões
 				public void actionPerformed(ActionEvent e) {
+					isResult=true; // Para fazer aparecer o numero depois do calculo, em vez de juntar ao calculo.
 					valor2 = Double.parseDouble(resultado.getText());
 					if(sinal.equals("soma")){
 						resultado.setText(mat.soma(valor1, valor2) + "");
