@@ -3,8 +3,10 @@ package telaCadastro;
 import java.awt.Container;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class TelaCadastro extends JFrame  {
@@ -30,12 +32,17 @@ public class TelaCadastro extends JFrame  {
 		JTextField rgC = new JTextField("");
 		JTextField sexoC = new JTextField("");
 		JTextField cepC = new JTextField("");
-		JTextField estadoC = new JTextField("");
 		JTextField celularC = new JTextField("");
 		JTextField cpfC = new JTextField("");
 		
+		JRadioButton sexoM = new JRadioButton("Masculino");
+		JRadioButton sexoF = new JRadioButton("Feminino");
+		
 		JButton save = new JButton("Salvar");
 		JButton imprimir = new JButton("Imprimir");
+		
+		String [] estados = {"----", "SP", "MG", "RJ", "PR"};
+		JComboBox estadoC = new JComboBox(estados);
 		
 		
 	public TelaCadastro() {
@@ -74,8 +81,12 @@ public class TelaCadastro extends JFrame  {
 		rgC.setBounds(70, 160, 200, 25);
 		paine.add(rgC);
 		
-		sexo.setBounds(290, 10, 50, 25);
+		sexo.setBounds(290, 10, 40, 25);
 		paine.add(sexo);
+		sexoM.setBounds(335, 10, 90, 25);
+		paine.add(sexoM);
+		sexoF.setBounds(425, 10, 90, 25);
+		paine.add(sexoF);
 		
 		cep.setBounds(290, 40, 50, 25);
 		paine.add(cep);
@@ -84,6 +95,8 @@ public class TelaCadastro extends JFrame  {
 		
 		estado.setBounds(290, 70, 50, 25);
 		paine.add(estado);
+		estadoC.setBounds(340, 70, 150, 25);
+		paine.add(estadoC);
 		
 		celular.setBounds(290, 130, 50, 25);
 		paine.add(celular);
