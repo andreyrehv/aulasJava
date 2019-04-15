@@ -4,10 +4,12 @@ import java.awt.Container;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 public class TelaCadastro extends JFrame  {
 	
@@ -45,6 +47,27 @@ public class TelaCadastro extends JFrame  {
 		JComboBox estadoC = new JComboBox(estados);
 		
 		
+		//Mascaras
+		JFormattedTextField Rg = null;
+		JFormattedTextField Cpf = null;
+		JFormattedTextField Telefone = null;
+		JFormattedTextField Celular = null;
+		JFormattedTextField Cep = null;
+		
+		MaskFormatter RG = null;
+		MaskFormatter CPF = null;
+		MaskFormatter telef = null;
+		MaskFormatter cel = null;
+		MaskFormatter CEP = null;
+		
+		
+		model.Cadastro pessoa = new model.Cadastro();
+				
+		
+		
+	
+		
+		
 	public TelaCadastro() {
 		super("Tela de Cadastro");
 		
@@ -71,11 +94,23 @@ public class TelaCadastro extends JFrame  {
 		bairroC.setBounds(70, 100, 200, 25);
 		paine.add(bairroC);
 		
+		try { //add mascara antes de tudo!!!
+			 telef= new MaskFormatter("(##)####-####"); //a mascara
+			 Telefone = new JFormattedTextField(telef);
+		} catch (Exception ex) { //exibir o erro
+			ex.printStackTrace();
+		}
 		tel.setBounds(10, 130, 100, 25);
 		paine.add(tel);
 		telC.setBounds(70, 130, 200, 25);
 		paine.add(telC);
 		
+		try { //add mascara antes de tudo!!!
+			 RG= new MaskFormatter("##.###.###-#"); //a mascara
+			 Rg = new JFormattedTextField(RG);
+		} catch (Exception ex) { //exibir o erro
+			ex.printStackTrace();
+		}
 		rg.setBounds(10, 160, 50, 25);
 		paine.add(rg);
 		rgC.setBounds(70, 160, 200, 25);
@@ -88,6 +123,12 @@ public class TelaCadastro extends JFrame  {
 		sexoF.setBounds(425, 10, 90, 25);
 		paine.add(sexoF);
 		
+		try { //add mascara antes de tudo!!!
+			 CEP= new MaskFormatter("#####-###"); //a mascara
+			 Cep = new JFormattedTextField(CEP);
+		} catch (Exception ex) { //exibir o erro
+			ex.printStackTrace();
+		}
 		cep.setBounds(290, 40, 50, 25);
 		paine.add(cep);
 		cepC.setBounds(340, 40, 150, 25);
@@ -98,11 +139,23 @@ public class TelaCadastro extends JFrame  {
 		estadoC.setBounds(340, 70, 150, 25);
 		paine.add(estadoC);
 		
+		try { //add mascara antes de tudo!!!
+			 cel= new MaskFormatter("(##)#####-####"); //a mascara
+			 Celular = new JFormattedTextField(cel);
+		} catch (Exception ex) { //exibir o erro
+			ex.printStackTrace();
+		}
 		celular.setBounds(290, 130, 50, 25);
 		paine.add(celular);
 		celularC.setBounds(340, 130, 150, 25);
 		paine.add(celularC);
 		
+		try { //add mascara antes de tudo!!!
+			 CPF= new MaskFormatter("###.###.###-##"); //a mascara
+			 Cpf = new JFormattedTextField(CPF);
+		} catch (Exception ex) { //exibir o erro
+			ex.printStackTrace();
+		}
 		cpf.setBounds(290, 160, 50, 25);
 		paine.add(cpf);
 		cpfC.setBounds(340, 160, 150, 25);
