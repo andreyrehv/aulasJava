@@ -169,6 +169,15 @@ public class TelaCadastro extends JFrame  {
 			public void actionPerformed(ActionEvent e) {
 				pessoa.setnome(nome.getText());
 				pessoa.setendereco(endereco.getText());
+				pessoa.setendereco(cidade.getText());
+				pessoa.setendereco(bairro.getText());
+				pessoa.setendereco(tel.getText());
+				pessoa.setendereco(rg.getText());
+				pessoa.setendereco(cep.getText());
+				pessoa.setendereco(estado.getText());
+				pessoa.setendereco(celular.getText());
+				pessoa.setendereco(cpf.getText());
+				pessoa.setendereco(sexo.getText());
 				
 			}
 		});
