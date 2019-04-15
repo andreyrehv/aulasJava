@@ -1,6 +1,8 @@
 package telaCadastro;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -96,7 +98,7 @@ public class TelaCadastro extends JFrame  {
 		
 		try { //add mascara antes de tudo!!!
 			 telef= new MaskFormatter("(##)####-####"); //a mascara
-			 Telefone = new JFormattedTextField(telef);
+			 telC = new JFormattedTextField(telef);
 		} catch (Exception ex) { //exibir o erro
 			ex.printStackTrace();
 		}
@@ -107,7 +109,7 @@ public class TelaCadastro extends JFrame  {
 		
 		try { //add mascara antes de tudo!!!
 			 RG= new MaskFormatter("##.###.###-#"); //a mascara
-			 Rg = new JFormattedTextField(RG);
+			 rgC = new JFormattedTextField(RG);
 		} catch (Exception ex) { //exibir o erro
 			ex.printStackTrace();
 		}
@@ -125,7 +127,7 @@ public class TelaCadastro extends JFrame  {
 		
 		try { //add mascara antes de tudo!!!
 			 CEP= new MaskFormatter("#####-###"); //a mascara
-			 Cep = new JFormattedTextField(CEP);
+			 cepC = new JFormattedTextField(CEP);
 		} catch (Exception ex) { //exibir o erro
 			ex.printStackTrace();
 		}
@@ -141,7 +143,7 @@ public class TelaCadastro extends JFrame  {
 		
 		try { //add mascara antes de tudo!!!
 			 cel= new MaskFormatter("(##)#####-####"); //a mascara
-			 Celular = new JFormattedTextField(cel);
+			 celularC = new JFormattedTextField(cel);
 		} catch (Exception ex) { //exibir o erro
 			ex.printStackTrace();
 		}
@@ -152,7 +154,7 @@ public class TelaCadastro extends JFrame  {
 		
 		try { //add mascara antes de tudo!!!
 			 CPF= new MaskFormatter("###.###.###-##"); //a mascara
-			 Cpf = new JFormattedTextField(CPF);
+			 cpfC = new JFormattedTextField(CPF);
 		} catch (Exception ex) { //exibir o erro
 			ex.printStackTrace();
 		}
@@ -163,6 +165,13 @@ public class TelaCadastro extends JFrame  {
 		
 		save.setBounds(299, 210, 90, 35);
 		paine.add(save);
+		save.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pessoa.setnome(nome.getText());
+				pessoa.setendereco(endereco.getText());
+				
+			}
+		});
 		
 		imprimir.setBounds(399, 210, 90, 35);
 		paine.add(imprimir);
